@@ -3,8 +3,8 @@ var app = express();
 
 app.use(express.static("public"))
 
-app.get('./', function(req, res){
-    res.send(colorGame.html)
-})
+app.get('/', (req, res) => {
+    res.sendFile('./public/colorGame.html', { root: __dirname });
+});
 
 app.listen(process.env.PORT || 3000, () => console.log("Server is running......"));
